@@ -6,11 +6,11 @@ const App = () => {
     <SafeAreaProvider style={{ flex: 1 }} >
       <SafeAreaView style={{ flex: 1 }}>
 
-      <View>
-      <Text>Hello World</Text>
-      </View>
+        <View>
+          <Text>Hello World</Text>
+        </View>
 
-       
+
 
       </SafeAreaView>
     </SafeAreaProvider>
