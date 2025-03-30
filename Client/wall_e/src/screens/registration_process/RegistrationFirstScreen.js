@@ -1,18 +1,26 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Button } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-const RegistrationDashboard = () => {
+import CustomButton from '../../components/CustomButton';
+const RegistrationFirstScreen = (props) => {
   return (
-    <View>
+    <View >
 
-     
-      <Text style={styles.title} >Registration Dashboard</Text>
+      {/* <Text style={styles.title} >Registration Dashboard</Text> */}
       <Text style={styles.welcomeText}>WELCOME ONBOARD!</Text>
-      <Text >Just few steps to create a new account for FREE!</Text>
+      <Text style={styles.subtitle} >Just few steps to create a new account for FREE!</Text>
 
-      <Button title="Create User Account" />
-      <Button title="Create User Account" />
-      
+      <CustomButton
+        text="Create User Account"
+        onPress={() => {props.navigation.navigate("CreateUserAccount")}}
+        style={{marginTop:'25%'}}
+      />
+
+      <CustomButton
+        text="Create Merchant Account"
+        onPress={() => {props.navigation.navigate("CreateMerchantAccount") }}
+        style={{marginVertical:'12%'}}
+      />
+
     </View>
   );
 };
@@ -27,14 +35,17 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   welcomeText: {
-    fontSize: 28,
-    fontWeight: 'bold',
+    fontSize: 22,
+    fontWeight: '700',
     marginVertical: 20,
+    textAlign: 'center'
   },
   subtitle: {
     fontSize: 16,
     marginBottom: 40,
     textAlign: 'center',
+    marginHorizontal: 30,
+    fontWeight:'500'
   },
   button: {
     backgroundColor: '#0095DA',  // Updated color
@@ -53,4 +64,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default RegistrationDashboard;
+export default RegistrationFirstScreen;
