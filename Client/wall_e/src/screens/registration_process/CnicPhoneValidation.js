@@ -18,6 +18,8 @@ const CnicPhoneValidation = (props) => {
             Toast.show("Please enter valid Phone number");
             return;
         }
+        Toast.show("All OK");
+        props.navigation.navigate("OtpVerification");
     }
     return (
         <KeyboardAvoidingView

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TextInput, ScrollView } from 'react-native';
 import CustomButton from '../../components/CustomButton';
 
 
@@ -9,12 +9,12 @@ const CreateMerchantAccount = (props) => {
     const [shopName,setShopName] = useState("");
     const [shopAddress,setShopAddress] = useState("");
     return (
-        <View style={{ paddingHorizontal: 20 }} >
+        <ScrollView contentContainerStyle={{paddingBottom: 50}} style={{ paddingHorizontal: 20}} >
           
             <Text style={styles.welcomeText}>WELCOME ONBOARD!</Text>
             <Text style={styles.subtitle}>Please provide Shop details to become a Merchant with Wall-e</Text>
 
-            <View style={{ marginTop: '5', paddingHorizontal: 10 }} >
+            <View style={{ marginTop: '2', paddingHorizontal: 10 }} >
                 <Text style={[styles.inputLabel,{marginTop:0}]}>Please enter your Name as per CNIC or Form-B</Text>
                 
                     <TextInput
@@ -52,10 +52,10 @@ const CreateMerchantAccount = (props) => {
 
             <CustomButton
             text = "Next"
-            style={{marginTop:'20%'}}
+            style={{marginTop:'5%'}}
             onPress = {()=>props.navigation.navigate("CnicPhoneValidation")}
             />
-        </View>
+        </ScrollView>
     );
 };
 
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: 16,
-        marginBottom: 40,
+        marginBottom: 20,
         textAlign: 'center',
         marginHorizontal: 5,
         fontWeight: '500'

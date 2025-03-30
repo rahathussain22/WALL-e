@@ -5,6 +5,11 @@ import CreateMerchantAccount from "../screens/registration_process/CreateMerchan
 import RegistrationFirstScreen from "../screens/registration_process/RegistrationFirstScreen";
 // import CnicValidation from "../screens/registration_process/CnicPhoneValidation";
 import CnicPhoneValidation from "../screens/registration_process/CnicPhoneValidation";
+import OtpVerification from "../screens/registration_process/OTPVerification";
+import CreatePin from "../screens/registration_process/CreatePin";
+
+
+
 const Stack = createNativeStackNavigator();
 
 const RegistrationNavigation = () => {
@@ -60,6 +65,25 @@ const RegistrationNavigation = () => {
                 name="CnicPhoneValidation"
                 options={{
                     headerTitle: "Registration Dashboard",
+                    // Disable header if not needed
+                    headerShown: true,
+                }}
+            />
+
+            <Stack.Screen
+                component={OtpVerification}
+                name="OtpVerification"
+                options={{
+                    headerTitle: "Enter The OTP",
+                    // Disable header if not needed
+                    headerShown: true,
+                }}
+            />
+            <Stack.Screen
+                component={CreatePin}
+                name="CreatePin"
+                options={{
+                    headerTitle: "Create The Pin Code",
                     // Disable header if not needed
                     headerShown: true,
                 }}
