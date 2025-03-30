@@ -21,6 +21,7 @@ const CnicPhoneValidation = (props) => {
         Toast.show("All OK");
         props.navigation.navigate("OtpVerification");
     }
+
     return (
         <KeyboardAvoidingView
             style={styles.container}

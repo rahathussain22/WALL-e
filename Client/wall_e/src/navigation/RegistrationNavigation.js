@@ -7,7 +7,7 @@ import RegistrationFirstScreen from "../screens/registration_process/Registratio
 import CnicPhoneValidation from "../screens/registration_process/CnicPhoneValidation";
 import OtpVerification from "../screens/registration_process/OTPVerification";
 import CreatePin from "../screens/registration_process/CreatePin";
-
+import Login from "../screens/login/Login";
 
 
 const Stack = createNativeStackNavigator();
@@ -88,6 +88,16 @@ const RegistrationNavigation = () => {
                     headerShown: true,
                 }}
             />
+                <Stack.Screen
+                component={Login}
+                name="Login"
+                options={{
+                    headerTitle: "Enter Your Pin",
+                    // Disable header if not needed
+                    headerShown: true,
+                }}
+            />
+            
         </Stack.Navigator>
     )
 }

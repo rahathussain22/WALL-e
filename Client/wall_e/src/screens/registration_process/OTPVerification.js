@@ -71,6 +71,16 @@ const OtpVerification = (props) => {
         }
     }
 
+
+    const handleKeyPress = (e, index) => {
+        if (e.nativeEvent.key === 'Backspace' && otp[index] === '') {
+            if (index > 0) {
+                // Focus on the previous input if the current one is empty
+                inputRefs.current[index - 1].current.focus();
+            }
+        }
+    };
+
     return (
         <KeyboardAvoidingView
             style={styles.container}
@@ -90,6 +100,7 @@ const OtpVerification = (props) => {
                             keyboardType="numeric"
                             maxLength={1}
                             returnKeyType="next"
+                            onKeyPress={(e)=>handleKeyPress(e,index)}
                         />
                     ))}
                 </View>
