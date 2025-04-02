@@ -31,12 +31,22 @@ const SearchContact = (props) => {
         }
     }
 
+    function handleOnPress(item){
+        props.navigation.navigate("TransactionNavigator",{
+            screen : "ChooseAmount",
+            params:{
+                contact: item
+            }
+        })
+    }
+
     function renderItem({ item }) {
         return (
             <TouchableHighlight
             underlayColor="#D9D9D9" // Define the highlight color on press
-            onPress={() => console.log(`Contact Pressed: ${item.name}`)} // Handle item press
+            onPress={()=>handleOnPress(item)} // Handle item press
             activeOpacity={0.6} // Optionally adjust opacity when pressed
+            
             >
                 <View
                     style={{ flexDirection: 'row', alignItems: 'center', paddingHorizontal: 15, marginTop: 8, borderBottomColor: 'grey', borderBottomWidth: 0.5, paddingVertical: 10 }}

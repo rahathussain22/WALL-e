@@ -19,7 +19,7 @@ const AppNavigation = () => {
                 component={AuthenticationNavigator}
                 />
                 <Stack.Screen
-                name="TransactionFlow"
+                name="TransactionNavigator"
                 component={TransactionNavigator}
                 />
                 <Stack.Screen

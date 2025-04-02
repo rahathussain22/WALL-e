@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
-import CustomButton from '../../components/CustomButton';
+import CustomButton from '../components/CustomButton';
 import { Bell } from 'lucide-react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -87,11 +87,11 @@ const Home = () => {
     return (
         <View>
             <LinearGradient
-                colors={['#0095DA', '#469FB7']}
+                colors={['#004F74', '#0095DA']}
                 style={{ height: 150, paddingTop: 20, paddingLeft: 5, paddingRight: 5 }}
             >
 
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 10 }}><Image style={{ height: 40, width: 40, borderRadius: 30, resizeMode: 'cover' }} source={require('../../../assets/ulf.jpg')} />
+                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 10 }}><Image style={{ height: 40, width: 40, borderRadius: 30, resizeMode: 'cover' }} source={require('../../assets/ulf.jpg')} />
                     <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'white' }}>Wall-e Account</Text>
                     <Bell size={22} color={'white'} />
                     {/* 
@@ -121,7 +121,7 @@ const Home = () => {
                 >
                     <Text style={styles.walletText} >Online Wallet</Text>
                     <Text style={[styles.walletText, { fontWeight: '700', marginVertical: 5, fontSize: 18 }]}>****</Text>
-                    <Image source={require('../../../assets/send.png')}
+                    <Image source={require('../../assets/send.png')}
                         style={{ height: 40, width: 40, resizeMode: 'cover' }}
                     />
 
@@ -130,7 +130,7 @@ const Home = () => {
                         text="Add Cash"
                         style={{ backgroundColor: "#3CBFFB", width: '40%', marginVertical: 10, paddingVertical: 8 }}
                         textStyle={{ fontSize: 13 }}
-                        onPress = {()=>navigation.navigate("TransactionFlow",{
+                        onPress = {()=>navigation.navigate("TransactionNavigator",{
                             screen:'SearchContact',
                             params: {
                                 contacts: contacts
@@ -144,7 +144,7 @@ const Home = () => {
                 >
                     <Text style={styles.walletText}>Offline Wallet</Text>
                     <Text style={[styles.walletText, { fontWeight: '700', fontSize: 18, marginVertical: 5 }]}>Rs. 000</Text>
-                    <Image source={require('../../../assets/send.png')}
+                    <Image source={require('../../assets/send.png')}
                         style={{ height: 40, width: 40, resizeMode: 'cover' }}
                     />
 
@@ -152,7 +152,7 @@ const Home = () => {
                         text="Add Cash"
                         style={{ backgroundColor: "#3CBFFB", width: '40%', marginVertical: 10, paddingVertical: 8 }}
                         textStyle={{ fontSize: 13 }}
-                        onPress = {()=>navigation.navigate("TransactionFlow",{
+                        onPress = {()=>navigation.navigate("TransactionNavigator",{
                             screen:'SearchContact',
                             params: {
                                 contacts: contacts

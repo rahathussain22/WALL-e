@@ -7,7 +7,6 @@ import RegistrationFirstScreen from "../screens/registration_process/Registratio
 import CnicPhoneValidation from "../screens/registration_process/CnicPhoneValidation";
 import OtpVerification from "../screens/registration_process/OTPVerification";
 import CreatePin from "../screens/registration_process/CreatePin";
-import Login from "../screens/login/Login";
 
 
 const Stack = createNativeStackNavigator();

@@ -2,12 +2,12 @@ import { View, Image, TouchableOpacity, Text } from 'react-native';
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home, Settings, FileText } from 'lucide-react-native';  // Import lucide-react-native icons
-import HomeScreen from '../screens/online_transaction_process/Home';
+// import HomeScreen from '../screens/online_transaction_process/Home';
 import Merchant from '../screens/Merchant';
 import TransactionHistory from '../screens/TransactionHistory';
 import AccountSettings from '../screens/AccountSettings';
 import ScanScreen from '../screens/Scan'; // Your scan screen component
-
+import HomeScreen from '../screens/Home';
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {

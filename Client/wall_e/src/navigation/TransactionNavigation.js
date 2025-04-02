@@ -1,8 +1,8 @@
 import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import Home from "../screens/online_transaction_process/Home";
+import ChooseAmount from "../screens/online_transaction_process/ChooseAmount";
 import SearchContact from "../screens/online_transaction_process/SearchContact";
+import SendAmount from "../screens/online_transaction_process/SendAmount";
 const Stack = createNativeStackNavigator();
 
 const TransactionNavigator = () => {
@@ -27,10 +27,25 @@ const TransactionNavigator = () => {
                 component={SearchContact}
                 name="SearchContact"
                 options={{
-                    headerTitle: "Select a Contact"
+                    headerTitle: "Wall-e Transfer"
                 }}
             />
 
+            <Stack.Screen
+                name="ChooseAmount"
+                component={ChooseAmount}
+                options={{
+                    headerTitle: "Wall-e Transfer"
+                }}
+            />
+
+            <Stack.Screen
+                name="SendAmount"
+                component={SendAmount}
+                options={{
+                    headerTitle: "From Wall-e"
+                }}
+            />
         </Stack.Navigator>
     )
 }
