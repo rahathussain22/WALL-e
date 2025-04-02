@@ -12,7 +12,7 @@ import Login from "../screens/login/Login";
 
 const Stack = createNativeStackNavigator();
 
-const RegistrationNavigation = () => {
+const RegistrationNavigator = () => {
     return (
         <Stack.Navigator
             initialRouteName="RegistrationFirstScreen"
@@ -88,18 +88,9 @@ const RegistrationNavigation = () => {
                     headerShown: true,
                 }}
             />
-                <Stack.Screen
-                component={Login}
-                name="Login"
-                options={{
-                    headerTitle: "Enter Your Pin",
-                    // Disable header if not needed
-                    headerShown: true,
-                }}
-            />
             
         </Stack.Navigator>
     )
 }
 
-export default RegistrationNavigation;
+export default RegistrationNavigator;

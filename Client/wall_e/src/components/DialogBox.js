@@ -4,7 +4,7 @@ import CustomButton from './CustomButton';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';  // Import Icon library for cross icon
 
-function DialogBox({ isVisible, onClose, text }) {
+function DialogBox({ isVisible, onClose, text, pin }) {    
     const navigation = useNavigation();
 
     return (
@@ -27,7 +27,12 @@ function DialogBox({ isVisible, onClose, text }) {
                 <CustomButton
                     text="Login"
                     style={{ marginTop: 20 }}
-                    onPress={() => navigation.navigate("Login")}
+                    onPress={() => navigation.navigate("AuthenticationNavigator",{
+                        screen: "Login",
+                        params:{
+                            pin: pin ? pin: "1122"
+                        }
+                    })}
                 />
             </View>
         </Modal>

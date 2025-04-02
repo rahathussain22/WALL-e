@@ -56,8 +56,6 @@ const CreatePin = () => {
   const handleKeyPress = (e, index, source) => {
 
     if(source == "pin"){
-
-    
     
     if (e.nativeEvent.key === 'Backspace' && pin[index] === '') {
         if (index > 0) {
@@ -129,6 +127,7 @@ const CreatePin = () => {
       <DialogBox isVisible={showModal}
        onClose={() => setShowModal(false)}
        text="For now, there is some limitation for you to using some featured in this app. To using full featured you need to verified your identity by uploading citizen ID. you can do it later BTW"
+       pin = {pin.join('')}
        />
     </KeyboardAvoidingView>
   );

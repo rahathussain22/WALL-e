@@ -4,10 +4,9 @@ import Toast from 'react-native-simple-toast';
 import CustomButton from '../../components/CustomButton';
 import DialogBox from '../../components/DialogBox';
 
-const Login = () => {
+const Login = (props) => {
     const [pin, setPin] = useState(["", "", "", ""]);
 
-    // Create refs for each PIN input field dynamically using useRef
     const inputRefsForPin = useRef(pin.map(() => React.createRef()));
 
     const handleKeyPress = (e, index) => {
@@ -32,7 +31,16 @@ const Login = () => {
 
     // Function to handle PIN submission
     function handleOnPress() {
-
+        console.log("Pin: ",props.route.params.pin);
+        
+        if(pin.join('') == props.route.params.pin){
+            props.navigation.navigate("BottomTabNavigator",{
+                screen: "Home"
+            })
+        }
+        else{
+            Toast.show("Wrong Pin")
+        }
     }
 
     return (
@@ -46,7 +54,7 @@ const Login = () => {
                 <Text style={styles.inputLabel} >Enter your mobile number</Text>
 
                 <View
-                    style={{ borderColor: '#0095DA', borderWidth: 2, flexDirection: 'row', borderRadius: 13, height: 60, paddingRight: 10,marginHorizontal:18 }}
+                    style={{ borderColor: '#0095DA', borderWidth: 2, flexDirection: 'row', borderRadius: 13, height: 60, paddingRight: 10, marginHorizontal: 18 }}
                 >
                     <Text
                         style={{ backgroundColor: '#0095DA', borderTopLeftRadius: 10, borderBottomLeftRadius: 10, width: '25%', textAlign: 'center', textAlignVertical: 'center', color: 'white', fontSize: 18 }}
@@ -62,7 +70,7 @@ const Login = () => {
                     />
                 </View>
 
-                <Text style={[styles.inputLabel,{marginTop:25}]}>Please Enter Your Pin</Text>
+                <Text style={[styles.inputLabel, { marginTop: 25 }]}>Please Enter Your Pin</Text>
                 <View style={styles.otpWrapper}>
                     {pin.map((digit, index) => (
                         <TextInput
@@ -74,9 +82,21 @@ const Login = () => {
                             keyboardType="numeric"
                             maxLength={1}
                             returnKeyType="next"
-                            onKeyPress={(e)=>handleKeyPress(e,index)}
+                            onKeyPress={(e) => handleKeyPress(e, index)}
                         />
                     ))}
+                </View>
+
+                <View style={{flexDirection:'row',alignItems:'center', marginTop:'8%'}} >
+
+              
+                <Text>Don't have an account?</Text>
+
+                <TouchableOpacity
+                onPress={()=>props.navigation.navigate("AuthenticationNavigator",{screen: "RegistrationFlow"})}
+                >
+                    <Text style={{ fontWeight: '700', marginLeft: '10%', color:'blue'}} >Sign Up Now</Text>
+                </TouchableOpacity>
                 </View>
 
                 <CustomButton
